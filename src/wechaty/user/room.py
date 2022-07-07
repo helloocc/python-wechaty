@@ -137,7 +137,7 @@ class Room(Accessory[RoomPayload]):
                 payload = room.payload
                 if not payload:
                     return False
-                if query == payload.id or (query.lower() in payload.topic.lower()):
+                if query == payload.id or (query.lower() in payload.topic.lower()): # type: ignore
                     return True
                 return False
             func = filter_func
@@ -149,7 +149,7 @@ class Room(Accessory[RoomPayload]):
                 if not payload:
                     return False
 
-                if query.id == payload.id or (query.topic.lower() in payload.topic.lower()):
+                if query.id == payload.id or (query.topic.lower() in payload.topic.lower()): # noqa
                     return True
                 return False
             func = filter_func
@@ -331,6 +331,7 @@ class Room(Accessory[RoomPayload]):
                     await mention_contact.ready()
                     alias = await mention_contact.alias()
                     name = mention_contact.name
+                    log.info('name:%s, alias:%s',name,alias)
                     mention_info.append('@' + (alias or name))
 
                 mention_text = AT_SEPARATOR.join(mention_info)
