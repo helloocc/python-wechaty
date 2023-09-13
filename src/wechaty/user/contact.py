@@ -340,6 +340,7 @@ class Contact(Accessory[ContactPayload], AsyncIOEventEmitter):
 
         # import some class because circular dependency
         from wechaty.user.url_link import UrlLink   # pylint: disable=import-outside-toplevel
+        from wechaty.user.mini_program import MiniProgram
 
         if isinstance(message, str):
             # say text
