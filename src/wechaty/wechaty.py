@@ -417,7 +417,7 @@ class Wechaty(AsyncIOEventEmitter):
             # TODO: this problem is the most common error, so I add chinese & detail info for
             #  developer. this should be removed later.
             # pylint: disable=C0301
-            error_info = '''The network is not good, the bot will try to restart after 60 seconds.
+            error_info = '''The network is not good, the bot will try to restart after 30 seconds.
 But here are some suggestions for you:
 * 查看token是否可用？（过期或协议不可用）
 * docker 服务是否正常启动？
@@ -428,7 +428,7 @@ But here are some suggestions for you:
 I suggest that you should follow the template code from: https://wechaty.readthedocs.io/zh_CN/latest/ to avoid the unnecessary bugs.
 '''
             log.error(error_info)
-            await asyncio.sleep(60)
+            await asyncio.sleep(30)
             await self.restart()
 
         except WechatyPuppetError:
