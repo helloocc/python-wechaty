@@ -80,9 +80,7 @@ class RoomInvitation(Accessory, Acceptable):
         :return:
         """
         log.info('load () <%s>', room_invitation_id)
-
-        invitation = RoomInvitation(room_invitation_id)
-        return invitation
+        return cls(room_invitation_id)
 
     async def accept(self) -> None:
         """
