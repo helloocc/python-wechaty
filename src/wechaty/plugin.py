@@ -720,7 +720,7 @@ class WechatyPluginManager:     # pylint: disable=too-many-instance-attributes
             # this will make the plugins running sequential, _plugins
             # is a sort dict
             for name, plugin in self._plugins.items():
-                log.info('emit %s-plugin ...', name)
+                #  log.info('emit %s-plugin ...', name)
                 if self.plugin_status(name) == PluginStatus.Running:
                     await plugin.on_message(message)
 
@@ -735,7 +735,7 @@ class WechatyPluginManager:     # pylint: disable=too-many-instance-attributes
             assert isinstance(friendship, Friendship)
 
             for name, plugin in self._plugins.items():
-                log.info('emit %s-plugin ...', name)
+                #  log.info('emit %s-plugin ...', name)
                 if self.plugin_status(name) == PluginStatus.Running:
                     await plugin.on_friendship(friendship)
 
@@ -750,7 +750,7 @@ class WechatyPluginManager:     # pylint: disable=too-many-instance-attributes
             assert isinstance(contact, Contact)
 
             for name, plugin in self._plugins.items():
-                log.info('emit %s-plugin ...', name)
+                #  log.info('emit %s-plugin ...', name)
                 if self.plugin_status(name) == PluginStatus.Running:
                     await plugin.on_login(contact)
 
@@ -765,7 +765,7 @@ class WechatyPluginManager:     # pylint: disable=too-many-instance-attributes
             assert isinstance(room_invitation, RoomInvitation)
 
             for name, plugin in self._plugins.items():
-                log.info('emit %s-plugin ...', name)
+                #  log.info('emit %s-plugin ...', name)
                 if self.plugin_status(name) == PluginStatus.Running:
                     await plugin.on_room_invite(room_invitation)
 
@@ -793,7 +793,7 @@ class WechatyPluginManager:     # pylint: disable=too-many-instance-attributes
             assert isinstance(date, datetime)
 
             for name, plugin in self._plugins.items():
-                log.info('emit %s-plugin ...', name)
+                #  log.info('emit %s-plugin ...', name)
                 if self.plugin_status(name) == PluginStatus.Running:
                     await plugin.on_room_join(room, invitees, inviter, date)
 
@@ -821,7 +821,7 @@ class WechatyPluginManager:     # pylint: disable=too-many-instance-attributes
             assert isinstance(date, datetime)
 
             for name, plugin in self._plugins.items():
-                log.info('emit %s-plugin ...', name)
+                #  log.info('emit %s-plugin ...', name)
                 if self.plugin_status(name) == PluginStatus.Running:
                     await plugin.on_room_leave(room, leavers, remover, date)
 
@@ -848,7 +848,7 @@ class WechatyPluginManager:     # pylint: disable=too-many-instance-attributes
             assert isinstance(date, datetime)
 
             for name, plugin in self._plugins.items():
-                log.info('emit %s-plugin ...', name)
+                #  log.info('emit %s-plugin ...', name)
                 if self.plugin_status(name) == PluginStatus.Running:
                     await plugin.on_room_topic(
                         room, new_topic, old_topic,
@@ -879,7 +879,7 @@ class WechatyPluginManager:     # pylint: disable=too-many-instance-attributes
             # assert isinstance(data, (None, str))
 
             for name, plugin in self._plugins.items():
-                log.info('emit %s-plugin ...', name)
+                #  log.info('emit %s-plugin ...', name)
                 if self.plugin_status(name) == PluginStatus.Running:
                     await plugin.on_scan(
                         qr_code,
